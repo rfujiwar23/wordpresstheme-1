@@ -1,0 +1,50 @@
+/* 
+Thene Name: Bootstrap 5 - Ryo Fujiwara
+Theme URI:https://ryo-fujiwara.netlify.app/
+Author: Ryo Fujiwara
+Author URI: https://ryo-fujiwara.netlify.app/
+Description: Custom Theme
+Version: 1.0
+License: Only for Me
+License URI: https://ryo-fujiwara.netlify.app/
+*/
+
+body {
+    background:#f8f9fa !important;
+    /* padding-top: 70px; */
+}
+
+.dropdown-menu {
+    font-size: small !important;
+}
+
+.navbar-brand img {
+    height:40px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.footer-widget ul {
+    list-style-type: none;
+}
+
+.footer-widget ul li a {
+    color:#fff! important;
+    text-decoration: none;
+}
+
+/* main-header */
+.main-header .container-fluid {
+    position:relative;
+    aspect-ratio: 16/9;
+}
+
+.main-header .container-fluid .logo-area {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
