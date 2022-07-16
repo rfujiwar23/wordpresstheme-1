@@ -17,20 +17,20 @@ get_header() ?>
 </header>
 
 <section class="top-contents my-5">
-<div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center">
 
-<div class="col-lg-6 col-md-6 d-flex justify-content-center my-4">
-    <?php
+        <div class="col-lg-6 col-md-6 d-flex justify-content-center my-4">
+            <?php
 
-    if (has_post_thumbnail()) { ?>
-        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url() ?>" alt="<? echo get_the_title() ?>">
-    <?php } else { ?>
-        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/image/placeholder.png" alt="<? echo get_the_title() ?>">
-    <?php }
+            if (has_post_thumbnail()) { ?>
+                <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url() ?>" alt="<? echo get_the_title() ?>">
+            <?php } else { ?>
+                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/image/placeholder.png" alt="<? echo get_the_title() ?>">
+            <?php }
 
-    ?>
-</div>
-</div>
+            ?>
+        </div>
+    </div>
     <div class="container d-flex justify-content-center">
 
         <div class="col-lg-8 col-md-8 col-sm-10">
@@ -38,17 +38,17 @@ get_header() ?>
                 <?php the_content(); ?>
             </div>
 
-            <?php if( get_field('youtube_url') ){ ?>
- 
-            <div class="VideoWrapper">
-            <?php echo $embed_code = wp_oembed_get( get_field('youtube_url') ); ?>
-            </div>
-            
+            <?php if (get_field('youtube_url')) { ?>
+
+                <div class="VideoWrapper">
+                    <?php echo $embed_code = wp_oembed_get(get_field('youtube_url')); ?>
+                </div>
+
             <?php } ?>
 
         </div>
     </div>
-    
+
 </section>
 
 <section class="main-contents my-5">
@@ -89,8 +89,40 @@ get_header() ?>
             </div>
         </div>
 
+        <?php
+        $args = array(
 
+            'post_type' => 'post',
+            "posts_per_page" => 3
+
+
+        );
+        $_posts = new WP_Query($args);
+        ?>
+
+        <?php if ($_posts->have_posts()) : ?>
+            <div class="my-3">
+                <?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-2">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid" alt="<?php the_title(); ?>">
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-10">
+                            <a href="<?php the_permalink(); ?>">
+                                <h4><?php the_title(); ?></h4>
+                            </a>
+                            <p><?php the_excerpt(); ?></p>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+
+        <?php endif; ?>
     </div>
+
+
 </section>
 
 
