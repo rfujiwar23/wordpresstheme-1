@@ -37,6 +37,15 @@ get_header() ?>
             <div class="content-area">
                 <?php the_content(); ?>
             </div>
+
+            <?php if( get_field('youtube_url') ){ ?>
+ 
+            <div class="VideoWrapper">
+            <?php echo $embed_code = wp_oembed_get( get_field('youtube_url') ); ?>
+            </div>
+            
+            <?php } ?>
+
         </div>
     </div>
     
