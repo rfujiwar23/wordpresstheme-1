@@ -8,12 +8,20 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply'); ?>
     <?php wp_head(); ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+    $(window).scroll(function () {
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 200);
+    });
+</script>
 </head>
 
 <body <?php body_class(); ?>>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light small custom-nav border-bottom fixed-top">
+    <nav class="navbar navbar-dark bg-kmax fixed-top navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light small custom-nav border-bottom fixed-top bg-kmax"> -->
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo bloginfo('url'); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/image/tokio-inkarami-vertical-black.svg" alt="TOKIO INKARAMI">

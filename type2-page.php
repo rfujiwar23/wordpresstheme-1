@@ -10,6 +10,7 @@ get_header(); ?>
         <header class="custom-page-header pt-5 pt-3">
             <div class="container d-flex justify-content-center">
             <div class="col-lg-6 col-md-8">
+                
                         <?php 
                         
                         if (has_post_thumbnail()) { ?>

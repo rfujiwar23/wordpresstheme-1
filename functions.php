@@ -50,8 +50,9 @@ function wpdocs_after_setup_theme() {
 }
 add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );
 
-// Page Excewrpt Support
+// Page Excerpt Support
 add_post_type_support( 'page', 'excerpt' );
+
 
 // Post Thumbnails
 add_theme_support( 'post-thumbnails' );
