@@ -22,13 +22,12 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-            <div class="container d-flex justify-content-center">
+            
+        </header>
+        <div class="container main-area d-flex justify-content-center">
 
                 <div class="col-lg-10 col-md-10">
-                    <h1><?php echo get_the_title(); ?></h1>
-
-
-                    <p><?php echo the_content(); ?></p>
+                    <h2><span><?php echo get_the_title(); ?></span></h2>
 
                     <?php
 
@@ -48,14 +47,52 @@ get_header(); ?>
 
                     <?php } ?>
 
-                   
+
+                   <div class="main-contents col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                   <p><?php echo the_content(); ?></p>
+                   </div>
 
                     
+
+
+                    <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+                    <div class="row">
+                        <div class="col-6">
+                            <?php
+
+                            $image = get_field('add_image');
+
+                            if (!empty($image)) : ?>
+
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid"/>
+
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-6">
+                            <?php
+
+                            $image = get_field('add_image2');
+
+                            if (!empty($image)) : ?>
+
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+
+
+
+
+
 
                 </div>
 
             </div>
-        </header>
 
     <?php endwhile;
 else : ?>
