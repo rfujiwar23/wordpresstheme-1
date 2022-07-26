@@ -40,7 +40,8 @@ get_header(); ?>
                             <?php
                             $link = get_field('salon_link_url');
                             if ($link) : ?>
-                                <a style="text-decoration: none;" href="<?php echo esc_url($link); ?>">
+                                <a style="text-decoration: none;" 
+                                href="<?php echo esc_url($link); ?>">
                                     <div class="link-to-page">
                                         <div class="img">
                                             <?php
