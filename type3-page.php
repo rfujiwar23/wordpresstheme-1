@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Template Name: Type 2
+ * Template Name: Type 3
  */
 
 get_header(); ?>
@@ -27,17 +27,9 @@ get_header(); ?>
                     <div class="col-lg-10 col-md-10">
                         <h1><?php echo get_the_title(); ?></h1>
                         <p><?php echo the_content(); ?></p>
-                        <a href="https://www.kami-charisma.com/" class="btn btn-dark">TOKIO STARSの詳細はこちら</a>
-                        
-                        <hr>
-                        <p><?php the_field('body_contents'); ?></p>
-
-                        <a href="https://www.kami-charisma.com/" class="btn btn-dark">カミカリスマの詳細はこちら</a>
                     </div>
                 
             </div>
-
-            
         </header>
 
     <?php endwhile;

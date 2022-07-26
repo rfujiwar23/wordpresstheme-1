@@ -104,27 +104,27 @@ get_header() ?>
             <div class="my-3">
                 <h2 class="text-center my-4">NEWS</h2>
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
-                <?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
-                    <div class="row news">
-                        <div class="col-lg-3 col-md-3 col-sm-2 col-3">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid" alt="<?php the_title(); ?>">
-                            <?php endif; ?>
+                    <?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
+                        <div class="row news">
+                            <div class="col-lg-3 col-md-3 col-sm-2 col-3">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid" alt="<?php the_title(); ?>">
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-10 col-9">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                                <h4 class="time">投稿：20<?php the_time('y-m-j') ?></h4>
+                                <!-- <p><?php the_excerpt(); ?></p> -->
+                                <p><?php echo mb_substr(get_the_excerpt(), 0, 45) . '...'; ?></p>
+                            </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-sm-10 col-9">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                            <h4 class="time">投稿：20<?php the_time('y-m-j') ?></h4>
-                            <!-- <p><?php the_excerpt(); ?></p> -->
-                            <p><?php echo mb_substr( get_the_excerpt(), 0, 45 ) . '...'; ?></p>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
 
-                <div class="read-more text-center my-4">
-                <a href="#">もっと見る</a>
-                </div>
+                    <div class="read-more text-center my-4">
+                        <a class="btn btn-primary" href="<?php bloginfo('url') ?>/news">もっと見る</a>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>

@@ -146,6 +146,26 @@ p.post-time i {
 }
 /* news post page */
 
+/* 404ページ */
+
+.four {
+    height:100vh;
+}
+.four-zero-four-page {
+    height:100vh;
+}
+
+.promotion-video {
+    width:90%;
+    margin:5vh auto;
+}
+
+
+.promotion-video video {
+    width:100%;
+}
+
+
 
   @media screen and (max-width:992px) {
     .bg-kmax {

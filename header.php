@@ -20,11 +20,11 @@
 <body <?php body_class(); ?>>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-dark bg-kmax fixed-top navbar-expand-lg">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light small custom-nav border-bottom fixed-top bg-kmax"> -->
+    <!-- <nav class="navbar navbar-dark bg-kmax fixed-top navbar-expand-lg"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark small custom-nav border-bottom bg-kmax">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo bloginfo('url'); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/image/tokio-inkarami-vertical-black.svg" alt="TOKIO INKARAMI">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/tokio-inkarami-vertical-white.svg" alt="TOKIO INKARAMI">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
