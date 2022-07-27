@@ -184,9 +184,16 @@ p.post-time i {
 }
 
 .main-area .main-contents {
-    color:red;
     margin:10vh auto;
     line-height: 2em;
+}
+
+.link-button a {
+    width:100%;
+}
+
+.ext-link a .link-to-page {
+    color:#242424;
 }
 
 

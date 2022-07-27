@@ -30,13 +30,15 @@ get_header(); ?>
                 </div>
 
 
-
+                   
             </div>
             <div class="container">
-                <div class="col-lg-10 offset-lg-1">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="link-button my-5">
+                    <a href="#" class="btn btn-primary">SEARCH</a>
+                    </div>
                     <div class="row">
-                        <div class="col-6">
-
+                        <div class="col-6 ext-link">
                             <?php
                             $link = get_field('salon_link_url');
                             if ($link) : ?>
@@ -53,6 +55,29 @@ get_header(); ?>
                                         <div class="text">
                                             <h4><?php the_field('salon_link_title'); ?></h4>
                                             <p><?php the_field('salon_link_desc'); ?></p>
+                                        </div>
+                                    </div>
+
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-6 ext-link">
+                            <?php
+                            $link = get_field('salon_link_url2');
+                            if ($link) : ?>
+                                <a style="text-decoration: none;" 
+                                href="<?php echo esc_url($link); ?>">
+                                    <div class="link-to-page">
+                                        <div class="img">
+                                            <?php
+                                            $image = get_field('salon_link_img2');
+                                            if (!empty($image)) : ?>
+                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="text">
+                                            <h4><?php the_field('salon_link_title2'); ?></h4>
+                                            <p><?php the_field('salon_link_desc2'); ?></p>
                                         </div>
                                     </div>
 
