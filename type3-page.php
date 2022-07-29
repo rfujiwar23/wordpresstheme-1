@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <header class="custom-page-header pt-5 pt-3">
-            <div class="container d-flex justify-content-center">
+            <div class="container salon-menu-page d-flex justify-content-center">
                 <div class="col-lg-6 col-md-8">
 
                     <?php
@@ -22,19 +22,19 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-            <div class="container d-flex justify-content-center">
+            <div class="main-area container salon-menu-page d-flex justify-content-center">
 
                 <div class="col-lg-10 col-md-10">
-                    <h1><?php echo get_the_title(); ?></h1>
+                    <h2><?php echo get_the_title(); ?></h2>
                     <p><?php echo the_content(); ?></p>
                 </div>
 
 
                    
             </div>
-            <div class="container">
+            <div class="container salon-menu-page">
                 <div class="col-lg-6 offset-lg-3">
-                    <div class="link-button my-5">
+                    <div class="link-button mb-5">
                     <a href="#" class="btn btn-primary">SEARCH</a>
                     </div>
                     <div class="row">
