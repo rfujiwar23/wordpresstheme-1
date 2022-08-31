@@ -44,6 +44,13 @@ add_action('widgets_init','custom_widgets');
  */
 
 
+function wpb_total_posts() {
+  $total = wp_count_posts()->publish;
+  echo '投稿数: ' . $total ;
+}
+
+
+
 
 function wpdocs_after_setup_theme() {
     add_theme_support( 'html5', array( 'search-form' ) );
@@ -51,7 +58,19 @@ function wpdocs_after_setup_theme() {
 add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );
 
 // Page Excerpt Support
-add_post_type_support( 'page', 'excerpt' );
+// add_post_type_support( 'page', 'excerpt' );
+
+function mytheme_custom_excerpt_length( $length ) {
+  return 10;
+}
+add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
+
+// Excerpt Read More
+function new_excerpt_more($more) {
+  global $post;
+  return '...' . 'Read More';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 
 // Post Thumbnails
