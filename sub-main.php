@@ -10,13 +10,8 @@ get_header(); ?>
 <div class="jumbotron">
     <?php if (have_rows('banner_image')) : ?>
         <?php while (have_rows('banner_image')) : the_row(); ?>
-            <?php if (get_row_layout() == 'page_top_banner') : ?>
-                <!-- <div class="top_banner container px-0"> -->
-                <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
-                    <img src="<?php echo get_sub_field('image'); ?>" alt="" class="img-fluid">
-                </div>
-                <!-- </div> -->
-            <?php endif; ?>
+            <!--  -->
+            <?php get_template_part('components/top', 'jumbotron'); ?>
         <?php endwhile; ?>
     <?php endif; ?>
 </div>
@@ -32,7 +27,6 @@ get_header(); ?>
             <?php while (have_rows('content')) : the_row(); ?>
 
                 <?php if (get_row_layout() == 'column_section') : $columns = get_sub_field('columns'); ?>
-
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <?php foreach ($columns as $column) :
                         ?>
@@ -146,28 +140,16 @@ get_header(); ?>
                 <?php endif; ?>
 
 
+                <!-- Free Text Area -->
                 <?php if (get_row_layout() == 'free_text_area') : ?>
-
-                    <div class="text-area col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
-                        <div class="title">
-                            <h3 class="text-center"><?php echo get_sub_field('title'); ?></h3>
-                        </div>
-                        <div class="text-body">
-                            <p><?php echo get_sub_field('text_area_only') ?></p>
-                        </div>
-                    </div>
+                    <?php get_template_part('components/category', 'freetext'); ?>
                 <?php endif; ?>
 
                 <?php if (get_row_layout() == 'linking_button_read_more') :
-                    $linkText = get_sub_field('link_text');
-                    $linkUrl = get_sub_field('link_url');
-                    $color = get_sub_field('button_color');
+                    
                 ?>
-                    <a href="<?php echo $linkUrl; ?>" style="text-decoration:none;">
-                        <div class="link-button <?php echo $color; ?>">
-                            <?php echo $linkText; ?>
-                        </div>
-                    </a>
+                    <?php get_template_part('components/category', 'readmore1'); ?>
+                    
 
                 <?php endif; ?>
 
@@ -195,83 +177,19 @@ get_header(); ?>
                 <?php endif; ?>
 
 
-
-                <?php if (get_row_layout() == 'landscape_view_link_image') :
-                    $image = get_sub_field('image');
-                    $title = get_sub_field('title');
-                    $link = get_sub_field('link');
-                    $desc = get_sub_field('description');
-                ?>
-                    <div class="row my-5">
-                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-10 offset-1 landscape_view_link px-0">
-                            <a href="<?php echo $link; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" class="img-fluid"></a>
-                            <div class="text">
-                                <h4><span><?php echo $title; ?></span></h4>
-                                <div class="disc"><?php echo $desc; ?></div>
-                                <a href="<?php echo $link; ?>" class="bottom-link"><?php echo get_sub_field('link-text'); ?> <i class="lni lni-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- 画像付きで別ページ飛ばし -->
+                <?php if (get_row_layout() == 'landscape_view_link_image') :?>
+                    <?php get_template_part('components/category', 'imagelink'); ?>  
                 <?php endif; ?>
 
-                <?php if (get_row_layout() == 'landscape_view_link_video') :
-                    $video = get_sub_field('video');
-                    $title = get_sub_field('title');
-                    $desc = get_sub_field('description');
-                    $link = get_sub_field('link');
-                ?>
-                    <div class="row my-5">
-                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-10 offset-1 landscape_view_link px-0">
-                            <div class="video">
-                                <iframe class="embed-responsive-item" src="<?php echo $video; ?>"></iframe>
-                            </div>
-                            <div class="text">
-                                <h4><span><?php echo $title; ?></span></h4>
-                                <div class="disc"><?php echo $desc; ?></div>
-                                <a href="<?php echo $link; ?>" class="bottom-link"><?php echo get_sub_field('link-text'); ?> <i class="lni lni-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- 動画付きで別ページ飛ばし -->
+                <?php if (get_row_layout() == 'landscape_view_link_video') : ?>
+                    <?php get_template_part('components/category', 'videolink'); ?>  
                 <?php endif; ?>
 
-
-                <?php if (get_row_layout() == 'brand_and_items') :
-                    $brandText = get_sub_field('type');
-                    $description = get_sub_field('description');
-                    $logo = get_sub_field('logo');
-                    $items = get_sub_field('items');
-                ?>
-
-                    <div class="brand_and_items <?php echo $brandText; ?>">
-                        <div class="logo">
-                            <img src="<?php echo $logo; ?>" alt="<?php echo $brandText; ?>" class="img-fluid">
-                        </div>
-                        <div class="top-text">
-                            <h4><span><em><?php echo $brandText; ?></em> Series</span></h4>
-                            <p><?php echo $description; ?></p>
-                        </div>
-
-
-                        <div class="row d-flex justify-content-center">
-                            <?php foreach ($items as $item) : ?>
-                                <div class="col-sm-4 col-6 inkarami-items">
-                                    <img src="<?php echo $item['product_image']; ?>" alt="<?php echo $item['name']; ?>" class="img-fluid">
-                                    <h4><?php echo $item['name']; ?><br><span><?php echo $item['jp_name']; ?></span></h4>
-                                    <hr>
-                                    <h5><?php echo $item['size']; ?></h5>
-                                    <?php if ($item['true_or_false'] = 1) : ?>
-                                        <p>900mlサイズ有</p>
-                                    <?php endif; ?>
-
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-
-                    </div>
-
-
-
-
+                <!-- 商品の紹介 -->
+                <?php if (get_row_layout() == 'brand_and_items') :?>
+                    <?php get_template_part('components/category', 'products'); ?>
                 <?php endif; ?>
 
             <?php endwhile; ?>
@@ -283,32 +201,8 @@ get_header(); ?>
         <?php if (have_rows('promotion-links')) :?>
             <?php while (have_rows('promotion-links')) : the_row(); ?>
             <div class="promotion-page-links col-lg-10 offset-lg-1">
-            <?php if (get_row_layout() == 'promotional-external-link') :
-                    $innerBlock = get_sub_field('block');
-                ?>
-
-                    
-                        
-                        <div class="row d-flex justify-content-center item">
-                            <?php foreach ($innerBlock as $block) :
-                            ?>
-
-                            <div class="col-lg-6 col-md-6 col-sm-10 p-3" style="aspect-ratio:3/1; background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.5)), url(<?php echo $block['promotion-image']; ?>); background-position:center top; background-size:cover;">
-                            <h4><?php echo $block['promotion-title']; ?></h4>
-                            <p><?php echo $block['promotion-desc']; ?></p>
-                            <pre></pre>
-                            <a href="<?php echo $block['promotion-link']; ?>">
-                                
-                            </a>
-                            <pre></pre>
-                            <pre></pre>
-                            
-
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    
-
+                <?php if (get_row_layout() == 'promotional-external-link') :?>
+                    <?php get_template_part('components/promotion', 'links'); ?>
                 <?php endif; ?>
             </div>
             <?php endwhile; ?>

@@ -886,8 +886,40 @@ p.post-time i {
 
 
 /* Promotions Links */
-.promotion-page-links .item h4 {
-  color:#080606;
+
+.promotion-page-links a.item {
+  height: 100%;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promotion-page-links a.item {
+  color:#000;
+}
+
+.promotion-page-links a.item .show {
+  display: none;
+  padding:2vh 3vw;
+  background:rgba(34, 34, 34,0.3);
+  height:100%;
+
+}
+
+.promotion-page-links a.item .show h4 {
+  font-size: 1.5em;
+  color:#f4f4f4;
+  text-shadow: 1px 1px 1px rgba(21,20,55,0.66);
+}
+
+.promotion-page-links a.item .show p {
+  color:#f4f4f4;
+}
+
+.promotion-page-links a.item:hover .show{
+  display: block;
 }
 
 
