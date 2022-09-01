@@ -22,6 +22,7 @@ body, html {
 
 body {
   position:relative;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .dropdown-menu {
@@ -492,8 +493,52 @@ p.post-time i {
     background:#fff;
     width:96%;
     margin:20px auto;
-    padding:5px 10px;
+    padding:0 0 5px;
     box-shadow: 1px 3px 6px rgba(50,50,50,0.6);
+  }
+
+  .page-links .nav-card .img-1 {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .page-links .nav-card .img-1 img {
+    height:100%;
+  }
+
+  .page-links .nav-card .links {
+    padding:10px 5px;
+  }
+
+  .page-links .nav-card .links h3 {
+    font-size: 1.25em;
+  }
+
+  .page-links .nav-card .links h3 span {
+    font-size: 0.6em;
+  }
+
+  .page-links .nav-card .links p {
+    font-size: 0.9em;
+    line-height: 1.75em;
+  }
+
+  .page-links .nav-card .links .ext-link a {
+    text-decoration: none;
+    color:#000;
+    font-size: 0.8em;
+    padding-left: 20px;
+  }
+
+  .page-links .nav-card .links .inner-link a {
+    text-decoration: none;
+    color:#000;
+    font-size: 0.8em;
+    padding-right: 20px;
+  }
+
+  .page-links .nav-card .links .inner-link a:hover {
+    color:#046e81;
   }
   
   .page-links .nav-card .img {
@@ -721,19 +766,28 @@ p.post-time i {
 
   .landscape_view_link .text .bottom-link {
     text-decoration: none;
-    color:rgb(248, 248, 248);
+    color:rgb(34, 34, 34);
     font-size: 0.8em;
     padding:8px 10px;
     border-radius: 5px;
-    background: linear-gradient(135deg, rgba(21,20,55,1) 0%, rgba(88,88,88,1) 100%);
+    /* background: linear-gradient(135deg, rgba(21,20,55,1) 0%, rgba(88,88,88,1) 100%); */
     margin-left: 10px;
   }
 
-  .landscape_view_link .text .bottom-link:hover {
+  /* .landscape_view_link .text .bottom-link:hover {
     text-decoration: none;
     color:rgba(21,20,55,1);
     background: #fff;
     border:1px solid rgba(21, 20, 55, 1);
+  } */
+
+  .landscape_view_link .video {
+    aspect-ratio: 16/9;
+  }
+
+  .landscape_view_link .video iframe {
+    width:100%;
+    height:100%;
   }
 
 
@@ -818,6 +872,25 @@ p.post-time i {
 .list_table > dd p {
   margin:0;
 }
+
+.list_table > dd p a {
+  color:rgb(43, 107, 197);
+  text-decoration: none;
+}
+
+.list_table > dd p a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+/* Promotions Links */
+.promotion-page-links .item h4 {
+  color:#080606;
+}
+
+
 
 
 @media screen and (max-width: 767px) {
