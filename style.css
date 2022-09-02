@@ -922,7 +922,27 @@ p.post-time i {
   display: block;
 }
 
+.top {
+  width:100%;
+  max-width: 1000px; 
+  margin:0 auto;
+  background:#9a9a9a;
+}
 
+.top .image-area {
+  width:80%;
+  margin:0 auto;
+}
+
+.top .top-img {
+  width:100%;
+  object-fit: cover;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  border:none;
+  background:transparent;
+}
 
 
 @media screen and (max-width: 767px) {
@@ -987,5 +1007,20 @@ p.post-time i {
     .jumbotron .top_banner .logo {
       width:90%;
       font-size: 1em;
+    }
+  }
+
+  @media screen and (max-width:500px) and (orientation : portrait) {
+    .top {
+      width:100%; 
+      height:80vh;
+      
+    }
+
+    
+    .top .top-img {
+      object-fit: cover;
+      height:100%;
+      width: 100%;
     }
   }

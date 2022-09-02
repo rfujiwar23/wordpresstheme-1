@@ -35,6 +35,9 @@
     else : ?>
         <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
     <?php endif; ?>
+    <div class="read-more text-center my-4">
+            <a class="btn btn-primary" href="/">トップへ戻る</a>
+        </div>
 </div>
 
 <?php get_footer(); ?>

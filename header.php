@@ -12,14 +12,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
+    <script>
+    jQuery(document).ready(function ($) {
+      var owl = $("#carousel");
+      owl.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        items: 3,
+        loop: true,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: false,
+        smartSpeed: 500,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+          0: {
+            items: 1
+            // nav: true
+          },
+          480: {
+            items: 1,
+            nav: false
+          },
+          768: {
+            items: 1,
+            // nav: true,
+            loop: true
+          },
+          992: {
+            items: 1,
+            // nav: true,
+            loop: true
+          },
+          1200: {
+            items: 1,
+            loop:true
+          }
+        },
+        responsiveRefreshRate: 1000,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        itemElement: "div",
+        stageElement: "div",
+        refreshClass: "owl-refresh",
+        loadedClass: "owl-loaded",
+        loadingClass: "owl-loading",
+        rtlClass: "owl-rtl",
+        responsiveClass: "owl-responsive",
+        dragClass: "owl-drag",
+        itemClass: "owl-item",
+        stageClass: "owl-stage",
+        stageOuterClass: "owl-stage-outer",
+        grabClass: "owl-grab",
+        autoHeight: false,
+        lazyLoad: false
+      });
+
+      $(".next").click(function () {
+        owl.trigger("owl.next");
+      });
+      $(".prev").click(function () {
+        owl.trigger("owl.prev");
+      });
+    });
+  </script>
     <script>
     $(window).scroll(function () {
         $('nav').toggleClass('scrolled', $(this).scrollTop() > 200);
     });
     </script>
-
 </head>
 
 <body <?php body_class(); ?>>
