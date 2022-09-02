@@ -58,119 +58,47 @@ get_header(); ?>
 
 
             <!-- トップページ　画像付きのメニュー -->
-            <?php if (get_row_layout() == 'inner_links') :?>
-                    <?php get_template_part('components/category', 'imagemenu') ?>
-                <?php endif; ?>
-            
-
-
-            <?php if (get_row_layout() == 'textarea_with_image') :
-                $title = get_sub_field('title');
-                $content = get_sub_field('content');
-                $image = get_sub_field('image');
-                $picture = $image['sizes']['large'];
-                $side = get_sub_field('image_side');
-            ?>
-
-                <div class="row my-5">
-                    <?php if ($side == 'left') : ?>
-                        <div class="col-lg-6"><img src="<?php echo $picture; ?>" alt="<?php echo $title; ?>" class="img-fluid"></div>
-                        <div class="col-lg-6">
-                            <h4><?php echo $title; ?></h4>
-                            <?php echo $content; ?>
-                        </div>
-                    <?php else : ?>
-                        <div class="col-lg-6">
-                            <h4><?php echo $title; ?></h4>
-                            <?php echo $content; ?>
-                        </div>
-                        <div class="col-lg-6"><img src="<?php echo $picture; ?>" alt="<?php echo $title; ?>" class="img-fluid"></div>
-                    <?php endif; ?>
-                </div>
+            <?php if (get_row_layout() == 'inner_links') : ?>
+                <?php get_template_part('components/category', 'imagemenu') ?>
             <?php endif; ?>
 
+
+            <!-- ２カラム画像 -->
             <?php if (get_row_layout() == 'two_column_img') : ?>
-                <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-10 offset-1">
-                    <div class="row">
-                        <div class="col-6"><img src="<?php echo get_sub_field('left_image'); ?>" alt="banner image" class="img-fluid"></div>
-                        <div class="col-6"><img src="<?php echo get_sub_field('right_image'); ?>" alt="banner image" class="img-fluid"></div>
-                    </div>
-                </div>
+                <?php get_template_part('components/category', 'twocolimg'); ?>
             <?php endif; ?>
 
 
+            <!-- Free Text Area -->
             <?php if (get_row_layout() == 'free_text_area') : ?>
-
-                <div class="text-area">
-                    <div class="title">
-                        <h3 class="text-center"><?php echo get_sub_field('title'); ?></h3>
-                    </div>
-                    <div class="text-body">
-                        <p><?php echo get_sub_field('text_area_only') ?></p>
-                    </div>
-                </div>
+                <?php get_template_part('components/category', 'freetext'); ?>
             <?php endif; ?>
 
-            <?php if (get_row_layout() == 'linking_button_read_more') :
-                $linkText = get_sub_field('link_text');
-                $linkUrl = get_sub_field('link_url');
-                $color = get_sub_field('button_color');
-            ?>
-                <a href="<?php echo $linkUrl; ?>" style="text-decoration:none;">
-                    <div class="link-button <?php echo $color; ?>">
-                        <?php echo $linkText; ?>
-                    </div>
-                </a>
 
+
+            <!-- もっと見る（外部リンク） -->
+            <?php if (get_row_layout() == 'linking_button_read_more') : ?>
+                <?php get_template_part('components/category', 'readmore1'); ?>
             <?php endif; ?>
 
+            <!-- もっと見る（内部リンク） -->
+            <?php if (get_row_layout() == 'linking_button_read_more2') : ?>
+                <?php get_template_part('components/category', 'readmore2'); ?>
+            <?php endif; ?>
+
+
+
+            <!-- youTUbe動画 -->
             <?php if (get_row_layout() == 'add_youTube_video') : ?>
-                <div class="videos-1 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-                    <h2><span><?php echo get_sub_field('sub_header'); ?></span></h2>
-                    <div class="embed-responsive video">
-                        <iframe class="embed-responsive-item" src="<?php echo get_sub_field('video_link'); ?>"></iframe>
-                    </div>
-                </div>
+                <?php get_template_part('components/category', 'youtube'); ?>
             <?php endif; ?>
 
-            <?php if (get_row_layout() == 'brand_and_items') :
-                $brandText = get_sub_field('type');
-                $description = get_sub_field('description');
-                $logo = get_sub_field('logo');
-                $items = get_sub_field('items');
-            ?>
-
-                <div class="brand_and_items <?php echo $brandText; ?>">
-                    <div class="logo">
-                        <img src="<?php echo $logo; ?>" alt="<?php echo $brandText; ?>" class="img-fluid">
-                    </div>
-                    <div class="top-text">
-                        <h4><span><em><?php echo $brandText; ?></em> Series</span></h4>
-                        <p><?php echo $description; ?></p>
-                    </div>
-
-
-                    <div class="row d-flex justify-content-center">
-                        <?php foreach ($items as $item) : ?>
-                            <div class="col-sm-4 col-6 inkarami-items">
-                                <img src="<?php echo $item['product_image']; ?>" alt="<?php echo $item['name']; ?>" class="img-fluid">
-                                <h4><?php echo $item['name']; ?><br><span><?php echo $item['jp_name']; ?></span></h4>
-                                <hr>
-                                <h5><?php echo $item['size']; ?></h5>
-                                <?php if ($item['true_or_false'] = 1) : ?>
-                                    <p>900mlサイズ有</p>
-                                <?php endif; ?>
-
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                </div>
-
-
-
-
+            <!-- 商品の紹介 -->
+            <?php if (get_row_layout() == 'brand_and_items') : ?>
+                <?php get_template_part('components/category', 'products'); ?>
             <?php endif; ?>
+
+
 
         <?php endwhile; ?>
 
@@ -231,8 +159,8 @@ get_header(); ?>
         <?php endif; ?>
     </div>
 
-    
-    
+
+
 
 
 </section>
