@@ -6,30 +6,27 @@
 
 get_header(); ?>
 
-
-
-<div id="carousel" class="owl-carousel owl-theme">
-
-<div class="top">
-<!-- <div class="image-area"> -->
-<img src="https://res.cloudinary.com/rfujiwar23/image/upload/v1662098881/test-image/limited.png" alt="" class="top-img">
-<!-- </div> -->
-    
-</div>
-<div class="top">
-<!-- <div class="image-area"> -->
-<img src="https://res.cloudinary.com/rfujiwar23/image/upload/v1662098880/test-image/design.png" alt="" class="top-img">
-<!-- </div> -->
-    
-</div>
-
-<div class="top">
-    <img src="https://res.cloudinary.com/rfujiwar23/image/upload/v1662098885/test-image/hyper.png" alt="" class="top-img">
-</div>
+<?php if (have_rows('top-image-slider')) : ?>
+    <?php while (have_rows('top-image-slider')) : the_row(); ?>
+        <div id="carousel" class="owl-carousel owl-theme">
+            <?php if (get_row_layout() == 'banner-slider') :
+                $banners = get_sub_field('image-list');
+            ?>
+                <?php foreach ($banners as $banner) : ?>
+                    <div class="top">
+                        <a href="<?php echo $banner['link']; ?>">
+                            <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['product-name']; ?>" class="top-img">
+                        </a>
+                    </div>
+                <?php endforeach ?>
+            <?php endif; ?>
+        </div>
+    <?php endwhile; ?>
+<?php endif; ?>
 
 
 
-              </div>
+
 
 
 <!-- <div class="jumbotron">
