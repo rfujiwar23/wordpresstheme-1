@@ -8,14 +8,17 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply'); ?>
     <?php wp_head(); ?>
+    <title>【公式】TOKIO インカラミ</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
+
     <script>
     jQuery(document).ready(function ($) {
       var owl = $("#carousel");
@@ -44,7 +47,6 @@
         responsive: {
           0: {
             items: 1
-            // nav: true
           },
           480: {
             items: 1,
@@ -52,12 +54,10 @@
           },
           768: {
             items: 1,
-            // nav: true,
             loop: true
           },
           992: {
             items: 1,
-            // nav: true,
             loop: true
           },
           1200: {
@@ -93,19 +93,15 @@
         owl.trigger("owl.prev");
       });
     });
-  </script>
-    <script>
-    $(window).scroll(function () {
-        $('nav').toggleClass('scrolled', $(this).scrollTop() > 200);
-    });
     </script>
+    
 </head>
 
 <body <?php body_class(); ?>>
 
     <!-- Navbar -->
     <!-- <nav class="navbar navbar-dark bg-kmax fixed-top navbar-expand-lg"> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark small custom-nav border-bottom bg-kmax">
+    <nav class="navbar navbar-expand-lg navbar-dark small custom-nav fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo bloginfo('url'); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/image/tokio-inkarami-vertical-white.svg" alt="TOKIO INKARAMI">

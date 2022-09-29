@@ -1,10 +1,10 @@
 <?php
 
-$image = get_sub_field('image');
-$title = get_sub_field('title');
-$link = get_sub_field('link');
-$desc = get_sub_field('description');
-$urltext = get_sub_field('link-text');
+$image = get_sub_field('ext-image');
+$title = get_sub_field('ext-title');
+$link = get_sub_field('ext-link');
+$desc = get_sub_field('ext-description');
+$urltext = get_sub_field('ext-link-text');
 ?>
 
 <div class="row my-5">
