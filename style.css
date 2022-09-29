@@ -1133,6 +1133,8 @@ video {
   list-style-type: none;
 }
 
+
+
 .stylists ul .stylist .name_and_salon {
   display:flex;
   background:#FFD54F;
@@ -1151,6 +1153,49 @@ video {
 
 .stylists ul .stylist .name_and_salon .salon p {
   font-size: 0.8em;
+}
+
+.stylists ul .stylist .content {
+  background:rgba(249, 249, 249, 0.5);
+  border-bottom:1px solid #c6c6c6;
+  border-left:1px solid #c6c6c6;
+  border-right:1px solid #c6c6c6;
+}
+
+.stylists ul .stylist .content .text {
+  /* background:red; */
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stylists ul .stylist .content .text .the_contents {
+ 
+  padding:2vh 10px 2vh;
+  /* background:#976E3E; */
+}
+
+.stylists ul .stylist .content .text .the_contents p {
+  font-size: 0.9em;
+  line-height: 2em;
+}
+
+.stylists ul .stylist .content .btn-kamisma {
+  background:hsl(337, 24%, 11%);
+  padding:6px 10px;
+  color:#fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  
+}
+
+.stylists ul .stylist .content .btn-kamisma:hover {
+  background:#fff;
+  color:rgb(35, 21, 26);;
+  border:1px solid hsl(337, 24%, 11%);;
+  text-decoration: none;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -1358,10 +1403,11 @@ video {
     margin-top: 2vh;
   }
 
-  /* .company-history .row-by-year .month-and-contents {
-      margin-top: 3vh;
+  .stylists ul .stylist .content .image {
+    margin:2vh auto;
+  }
 
-    } */
+
 
 }
 

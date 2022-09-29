@@ -99,7 +99,7 @@ get_header(); ?>
                     <?php get_template_part('components/category', 'imagemenu') ?>
                 <?php endif; ?>
 
-                
+
 
 
                 <!-- Free Text Area -->
@@ -148,45 +148,10 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <?php if (get_row_layout() == 'list-of-stylists') : ?>
-                    <?php
-    $post_objects = get_sub_field('stylist');
-    if( $post_objects ): ?>
-    <div class="stylists px-2">
-        
-            <ul class="px-0">
-                <?php foreach( $post_objects as $post): ?>
-                <?php setup_postdata($post); ?>
-                <li id="<?php echo esc_attr($post->post_name); ?>" class="stylist">
-                    <div class="stylist my-4">
-                        <div class="name_and_salon">
-                        <div class="name">
-                        <h5><?php the_field('last-name'); ?> <?php the_field('first-name'); ?> <span>氏</span></h5>
-                        </div>
-                        <div class="salon">
-                        <p class="mb-0"><?php the_field('salon-name'); ?> ／ <?php the_field('salon-area'); ?></p>
-                        </div>
-                        </div>
-                        <div class="row py-3">
-                        <div class="image col-md-3 col-sm-4 col-5">
-                            <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid" alt="<?php the_field('salon_name'); ?> <?php the_title(); ?>">
-                        </div>
-                        <div class="content col-md-9 col-sm-8 col-12">
-                        <?php the_content(); ?>
-                        </div>
-                        </div>
-                    </div>
-                </li><!-- /stylist -->
-                <?php endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-            </ul>
-        
-
-    </div><!-- /stylists -->
-    <?php endif; ?>     
+                    <?php get_template_part('components/category', 'stylists'); ?>
                 <?php endif; ?>
 
             <?php endwhile; ?>
-
         <?php endif; ?>
 
 
