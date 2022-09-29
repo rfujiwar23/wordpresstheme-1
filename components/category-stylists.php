@@ -2,14 +2,22 @@
 $post_objects = get_sub_field('stylist');
 if ($post_objects) : ?>
     <div class="stylists px-2">
+        
+
         <ul class="px-0">
+        
             <?php foreach ($post_objects as $post) : ?>
+
+                
                 <?php setup_postdata($post); ?>
+
+                
+
                 <li id="<?php echo esc_attr($post->post_name); ?>" class="stylist">
                     <div class="my-4 col-lg-10 offset-lg-1">
                         <div class="name_and_salon">
                             <div class="name">
-                                <h5><?php the_field('last-name'); ?> <?php the_field('first-name'); ?> <span>氏</span></h5>
+                                <h5><ruby><?php the_field('last-name'); ?><rt><?php the_field('furigana-last'); ?></rt></ruby> <ruby><?php the_field('first-name'); ?><rt><?php the_field('furigana-first'); ?></rt></ruby> <span>氏</span></h5>
                             </div>
                             <div class="salon">
                                 <p class="mb-0"><?php the_field('salon-name'); ?> ／ <?php the_field('salon-area'); ?></p>

@@ -1147,6 +1147,10 @@ video {
   margin:0;
 }
 
+.stylists ul .stylist .name_and_salon .name h5 ruby rt {
+  font-size:7px;
+}
+
 .stylists ul .stylist .name_and_salon .name h5 span {
   font-size: 0.8em;
 }
