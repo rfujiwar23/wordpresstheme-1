@@ -31,7 +31,11 @@ if ($post_objects) : ?>
                                 <div class="text">
                                     <div class="the_contents">
                                         <?php the_content(); ?>
-                                        <a href="<?php the_field('kamisma-page'); ?>" class="btn-kamisma">もっと詳しく見る</a>
+                                        <?php if (get_field('kamisma-page')): ?>
+                                            <a href="<?php the_field('kamisma-page'); ?>" class="btn-kamisma">KAMISMAのページで見る</a>
+                                        <?php endif; ?>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
