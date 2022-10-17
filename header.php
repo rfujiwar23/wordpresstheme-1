@@ -9,6 +9,9 @@
     <?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply'); ?>
     <?php wp_head(); ?>
     <title>【公式】TOKIO インカラミ</title>
+	<meta name="description"
+    content="公式オンラインストアです。唯一、お風呂で簡単にできるサロントリートメント、
+			 完成！あのカリスマ美容師たちの支持率No.1。TOKIO INKARAMI（トキオ インカラミ）だからできるシャンプー・トリートメント。選ばれる理由は…インカラミ、TOKIOトリートメント公式通販。">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />

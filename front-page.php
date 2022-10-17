@@ -28,7 +28,7 @@ get_header(); ?>
 <!-- <div class="" style="height:100vh; background:url(https://res.cloudinary.com/rfujiwar23/image/upload/v1612520150/pexels-jeremy-bishop-2922672.jpg); background-position:center; background-size:cover;" ></div> -->
 
 <!-- <div class="container my-5"> -->
-<div class="my-5">
+<div class="main-contents-area">
 <?php if (have_rows('content')) : ?>
 
 <?php while (have_rows('content')) : the_row(); ?>
@@ -65,7 +65,7 @@ get_header(); ?>
         ?>
 
         <a href="<?php echo $linkUrl; ?>" style="text-decoration:none;">
-            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-1 col-10 offset-1 my-5">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 my-5">
                 <img src="<?php echo $linkImage; ?>" alt="<?php echo $linkAlt; ?>" class="img-fluid">
             </div>
         </a>
@@ -86,22 +86,8 @@ get_header(); ?>
 <?php endif; ?>
 </div>
 
-<div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 news-section">
-    <h3 class="text-center">NEWS</h3>
-    <?php get_template_part('components/top', 'news'); ?>
-    <div class="read-more text-center my-4">
-        <a class="btn btn-read-more" href="<?php bloginfo('url') ?>/news">記事一覧</a>
-    </div>
-</div>
-
-<!-- <hr> -->
-
-
-
-<!-- </div> -->
-
-<div class="container" style="background:#dddddd;">
-    <div class="company-profile col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 py-5">
+<div class="container-fluid px-0" style="background:#dddddd;">
+    <div class="company-profile col-md-10 offset-md-1">
         <?php if (have_rows('company_info')) : ?>
             <?php while (have_rows('company_info')) : the_row(); ?>
                 <?php if (get_row_layout() == 'table') : ?>
@@ -116,8 +102,8 @@ get_header(); ?>
                     ?>
 
                     <a href="<?php echo $linkUrl; ?>" style="text-decoration:none;">
-                        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-10 offset-1 my-5">
-                            <img src="<?php echo $linkImage; ?>" alt="<?php echo $linkAlt; ?>" class="img-fluid" style="box-shadow:1px 3px 6px rgba(50,50,50,0.66);">
+                        <div class="col-md-8 offset-md-2">
+                            <img src="<?php echo $linkImage; ?>" alt="<?php echo $linkAlt; ?>" class="img-fluid">
                         </div>
                     </a>
                 <?php endif; ?>
@@ -125,6 +111,22 @@ get_header(); ?>
         <?php endif; ?>
     </div>
 </div>
+
+<div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 news-section">
+    <h3 class="text-center">NEWS</h3>
+    <?php get_template_part('components/top', 'news'); ?>
+    <div class="read-more text-center my-4">
+        <a class="btn btn-read-more" href="<?php bloginfo('url') ?>/news">記事一覧</a>
+    </div>
+</div>
+
+<!-- <hr> -->
+
+
+
+<!-- </div> -->
+
+
 
 
 

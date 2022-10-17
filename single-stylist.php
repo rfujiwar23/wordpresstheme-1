@@ -9,9 +9,7 @@ get_header(); ?>
 <!-- <img src="<?php the_post_thumbnail_url(); ?>" alt="Post" style="object-fit:cover;"> -->
 </div>
 </div>
-
 <div class="container post-page">
-
 <div class="about-stylist">
 <div class="name info">
 <h4><ruby><?php the_field('last-name'); ?><rt><?php the_field('furigana-last'); ?></rt></ruby> <ruby><?php the_field('first-name'); ?><rt><?php the_field('furigana-first'); ?></rt></ruby> 氏</h4>
@@ -21,12 +19,9 @@ get_header(); ?>
 </div>
 </div>
 <hr>
-
-
-
 <div class="row">
 <div class="col-sm-3 col-6">
-    <img src="<?php the_field('logo'); ?>" alt="<?php the_field('salon-name'); ?> <?php the_field('last-name'); ?>" class="img-fluid">
+    <img src="<?php the_field('logo'); ?>" alt="<?php the_field('salon-name'); ?> <?php the_field('last-name'); ?>" class="img-fluid">
 </div>
 <div class="col-sm-9 biography-details d-flex justify-content-center align-items-center">
 <div class="details">
@@ -35,9 +30,5 @@ get_header(); ?>
 </div>
 </div>
 </div>
-
-
-
 </div>
-
 <?php get_footer(); ?>

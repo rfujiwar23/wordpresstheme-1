@@ -1,12 +1,20 @@
-<?php get_header();
-
+<?php get_header(); 
 /**
  * Template Name: Posts
  */
 
 ?>
 
+<?php if (have_rows('sub-page')) : ?>
+    <?php while (have_rows('sub-page')) : the_row(); ?>
+        <?php get_template_part('components/sub', 'topvidimg'); ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+
+
 <header>
+	
 
     <div class="row d-flex justify-content-center my-5">
         <h3 class="text-center">お知らせ</h3>
