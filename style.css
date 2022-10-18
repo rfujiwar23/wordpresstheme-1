@@ -1137,7 +1137,7 @@ video {
 
 .stylists ul .stylist .name_and_salon {
   display:flex;
-  background:#FFD54F;
+  background:rgb(195, 152, 99);
   padding:10px;
   justify-content:space-between;
   border-bottom: 1px solid #976E3E;
@@ -1195,11 +1195,26 @@ video {
   
 }
 
+.stylists ul .stylist .content .stylist-info {
+  position:relative;
+}
+
+.stylists ul .stylist .content .stylist-info .kamisma-stylist {
+  position:absolute;
+  bottom:1%;
+  right:2%;
+}
+
 .stylists ul .stylist .content .btn-kamisma:hover {
   background:#fff;
   color:rgb(35, 21, 26);;
   border:1px solid hsl(337, 24%, 11%);;
   text-decoration: none;
+}
+
+.kami-charisma p small{
+  font-size: 0.8em;
+  color:rgb(172, 7, 7);
 }
 
 @media (min-aspect-ratio: 16/9) {

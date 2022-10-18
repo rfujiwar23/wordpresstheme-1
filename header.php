@@ -104,7 +104,7 @@
 
     <!-- Navbar -->
     <!-- <nav class="navbar navbar-dark bg-kmax fixed-top navbar-expand-lg"> -->
-    <nav class="navbar navbar-expand-lg navbar-dark small custom-nav fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark small custom-nav fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo bloginfo('url'); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/image/tokio-inkarami-vertical-white.svg" alt="TOKIO INKARAMI">
