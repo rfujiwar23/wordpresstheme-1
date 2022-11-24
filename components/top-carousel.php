@@ -1,5 +1,10 @@
 <?php if (get_row_layout() == 'top_page') : ?>
-    <div class="bg-video-wrap">
+    
+    <div class="bg-video-wrap">  
+        <?php if (get_sub_field('movie-link')) : ?>      
+        <video src="<?php echo get_sub_field('movie-link'); ?>" loop muted autoplay playsinline poster="<?php echo get_sub_field('image'); ?>">
+        </video>
+        <?php endif ?>
         <video src="<?php echo get_sub_field('movie'); ?>" loop muted autoplay playsinline poster="<?php echo get_sub_field('image'); ?>">
         </video>
         <div class="overlay">
@@ -8,6 +13,8 @@
             <h1><img src="<?php echo get_sub_field('title-logo'); ?>" alt="<?php echo get_sub_field('web-site-catch-phrase') ?>" class="img-fluid"></h1>
         </div>
     </div>
+    
+    
 <?php endif; ?>
 
 

@@ -7,7 +7,7 @@ if ($post_objects) : ?>
     <p>
         <img src="<?php echo get_template_directory_uri(); ?>/image/kamisma-logo2.png" alt="KAMISMA LOGO" height="30">
         <br>
-        <small>*カミカミスマ美容師として活躍されています</small>
+        <small>*カミカリスマ美容師として活躍されています</small>
     </p>
     
     </div>

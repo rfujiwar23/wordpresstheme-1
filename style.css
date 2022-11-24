@@ -18,6 +18,59 @@ html {
 }
 
 
+/* stylist carousel */
+
+.bd-example {
+  background:rgb(234, 233, 203);
+  padding:3vh 0;
+}
+
+.bd-example h2 {
+  text-align: center;
+}
+
+.bd-example h2 span {
+  padding-bottom: 3px;
+  border-bottom: 1px solid #5d2929;
+}
+
+.stylist-carousel {
+  padding:4vh 0;
+}
+
+.stylist-carousel .user-image {
+  margin:0 auto;
+}
+
+.stylist-carousel .user-image img {
+  border-radius: 50%;
+  border:1px solid #c7c7c7;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.stylist-carousel .user-voice {
+  margin:0 auto;
+  padding:2vh 10px;
+}
+
+.stylist-carousel .user-voice .user-details{
+  /* color:red; */
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.stylist-carousel .user-voice .carousel-text-area p {
+  margin:0;
+}
+
+.stylist-carousel .user-voice .user-details .age {
+  font-weight: bold;
+}
+
+/* stylist carousel */
+
+
+
 
 .wrapper {
   min-height: 100vh;
@@ -504,6 +557,7 @@ p.post-time i {
   padding: 20px;
   margin: 5vh auto;
 }
+
 
 .card {
   box-shadow: 1px 3px 6px rgba(50, 50, 50, 0.6);
