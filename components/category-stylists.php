@@ -47,7 +47,7 @@ if ($post_objects) : ?>
                                 </div>
                                 <div class="kamisma-stylist">
                                     <?php if (get_field('kamismastylist')): ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/image/kamisma-logo2.png" alt="KAMISMA LOGO" height="30">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/image/kamisma-logo2.png" alt="KAMISMA LOGO" width="100%">
                                     <?php endif; ?>
                                 </div>
                             </div>

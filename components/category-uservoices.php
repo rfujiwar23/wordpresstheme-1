@@ -1,4 +1,4 @@
-<div class="bd-example">
+<div class="bd-example" id="user-voice">
                         <h2><span>ユーザーの声</span></h2>
                         <div id="carouselExampleCaptions" class="carousel slide stylist-carousel" data-ride="carousel">
                             <div class="carousel-indicators">

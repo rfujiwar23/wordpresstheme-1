@@ -150,13 +150,11 @@ get_header(); ?>
                 <?php if (get_row_layout() == 'list-of-stylists') : ?>
                     <?php get_template_part('components/category', 'stylists'); ?>
                 <?php endif; ?>
-
-                <?php if (get_row_layout() == 'user-voice') : ?>
+		
+				<!-- User's Voice -->
+				<?php if (get_row_layout() == 'user-voice') : ?>
                     <?php get_template_part('components/category', 'uservoices'); ?>
-                    
-                <?php endif ?>
-
-
+                <?php endif; ?>
 
             <?php endwhile; ?>
         <?php endif; ?>

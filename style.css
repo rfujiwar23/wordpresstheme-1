@@ -1,22 +1,16 @@
 /* 
-Thene Name: Bootstrap 5 - Ryo Fujiwara
-Theme URI:https://ryo-fujiwara.netlify.app/
-Author: Ryo Fujiwara
-Author URI: https://ryo-fujiwara.netlify.app/
-Description: Custom Theme
-Version: 1.0
-License: Only for Me
-License URI: https://ryo-fujiwara.netlify.app/
+Theme Name: TOKIO INKARAMI
+Author: Ryo Fujiwara - INTENSE/IFING
+Description: tokio.tokyoで利用
+Version: 1.1
+License: IFING株式会社
 */
 
 body,
 html {
   overflow-x: hidden;
   /* height: 100vh; */
-  
-
 }
-
 
 /* stylist carousel */
 
@@ -68,7 +62,6 @@ html {
 }
 
 /* stylist carousel */
-
 
 
 
@@ -1079,7 +1072,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(20, 20, 20, 0.7) 100%);
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(20, 20, 20, 0.6) 100%);
   /* background-size: 3px 3px; */
   z-index: 2;
 }
@@ -1257,6 +1250,7 @@ video {
   position:absolute;
   bottom:1%;
   right:2%;
+  width:120px;
 }
 
 .stylists ul .stylist .content .btn-kamisma:hover {
@@ -1457,10 +1451,11 @@ video {
   }
 
   .company-history .row-by-year .year {
-    background: #1e3373;
+/*     background: #fff; */
+	border-bottom:1px solid #9a9a9a;
     padding: 10px 0;
     text-align: center;
-    color: #fff;
+    color: #000;
   }
 
   .company-history .row-by-year .year p {
@@ -1502,6 +1497,17 @@ video {
     width:100%;
     max-width:400px;
     padding:0 20px;
+  }
+	
+  .stylists ul .stylist .content .stylist-info .kamisma-stylist {
+/*     position: absolute;
+    bottom: 1%;
+    right: 2%; */
+    width: 80px;
+  }
+
+	.stylists ul .stylist .content .stylist-info .kamisma-stylist img{
+	width:100%;
   }
 }
 
